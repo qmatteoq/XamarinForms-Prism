@@ -1,5 +1,7 @@
-﻿using Prism.Unity;
+﻿using InfoSeries.Core.Services;
+using Prism.Unity;
 using InfoSeries.Views;
+using Microsoft.Practices.Unity;
 
 namespace InfoSeries
 {
@@ -11,12 +13,14 @@ namespace InfoSeries
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("MainPage?title=Hello%20from%20Xamarin.Forms");
+            NavigationService.NavigateAsync("MainPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
+            Container.RegisterTypeForNavigation<DetailPage>();
+            Container.RegisterType<ITsApiService, TsApiService>();
         }
     }
 }

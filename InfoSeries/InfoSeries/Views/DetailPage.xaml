@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="{Binding Path=SelectedShow.Name}"
+             x:Class="InfoSeries.Views.DetailPage">
+
+  <StackLayout>
+    <Image x:Name="InfoPoster"
+           Source="{Binding Path=SelectedShow.Images.Fanart}" Aspect="AspectFill" />
+    <Label Text="{Binding Path=SelectedShow.Overview}" LineBreakMode="WordWrap" FontSize="13" TextColor="#98a6ad" Margin="15" />
+  </StackLayout>
+
+</ContentPage>
