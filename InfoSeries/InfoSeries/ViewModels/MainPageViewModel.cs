@@ -13,7 +13,7 @@ namespace InfoSeries.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
-        private readonly TsApiService _apiService;
+        private readonly ITsApiService _apiService;
         private readonly INavigationService _navigationService;
         private ObservableCollection<SerieFollowersVM> _topSeries;
 
@@ -23,7 +23,7 @@ namespace InfoSeries.ViewModels
             set { SetProperty(ref _topSeries, value); }
         }
 
-        public MainPageViewModel(TsApiService apiService, INavigationService navigationService)
+        public MainPageViewModel(ITsApiService apiService, INavigationService navigationService)
         {
             _apiService = apiService;
             _navigationService = navigationService;

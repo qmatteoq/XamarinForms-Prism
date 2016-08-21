@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using InfoSeries.Core.Exceptions;
 using InfoSeries.Core.Models;
 
 namespace InfoSeries.Core.Services
@@ -13,31 +11,10 @@ namespace InfoSeries.Core.Services
             _baseUrl = "https://api.trackseries.tv/v1/";
         }
 
-public async Task<List<SerieFollowersVM>> GetStatsTopSeries()
-{
-    using (HttpClient client = GetClient())
-    {
-        try
+        public async Task<List<SerieFollowersVM>> GetStatsTopSeries()
         {
-            var response = await client.GetAsync("https://api.trackseries.tv/v1/Stats/TopSeries");
-            if (!response.IsSuccessStatusCode)
-            {
-                var error = await response.Content.ReadAsAsync<TrackSeriesApiError>();
-                var message = error != null ? error.Message : "";
-                throw new TrackSeriesApiException(message, response.StatusCode);
-            }
-            return await response.Content.ReadAsAsync<List<SerieFollowersVM>>();
+            return await Get<List<SerieFollowersVM>>("Stats/TopSeries");
         }
-        catch (HttpRequestException ex)
-        {
-            throw new TrackSeriesApiException("", false, ex);
-        }
-        catch (UnsupportedMediaTypeException ex)
-        {
-            throw new TrackSeriesApiException("", false, ex);
-        }
-    }
-}
 
         public async Task<SerieVM> GetSerieByIdAll(int id)
         {

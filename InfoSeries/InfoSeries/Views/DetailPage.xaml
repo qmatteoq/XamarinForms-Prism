@@ -9,7 +9,7 @@
   <StackLayout>
     <Image x:Name="InfoPoster"
            Source="{Binding Path=SelectedShow.Images.Fanart}" Aspect="AspectFill" />
-    <Label Text="{Binding Path=SelectedShow.Overview}" LineBreakMode="WordWrap" FontSize="13" TextColor="#98a6ad" Margin="15" />
+    <Label Text="{Binding Path=SelectedShow.Overview}" LineBreakMode="WordWrap" FontSize="13" TextColor="Black" Margin="15" />
   </StackLayout>
 
 </ContentPage>
