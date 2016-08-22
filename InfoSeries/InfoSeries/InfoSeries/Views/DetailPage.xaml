@@ -6,6 +6,10 @@
              Title="{Binding Path=SelectedShow.Name}"
              x:Class="InfoSeries.Views.DetailPage">
 
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Share" Command="{Binding Path=ShareItemCommand}" Order="Secondary"/>
+  </ContentPage.ToolbarItems>
+
   <StackLayout>
     <Image x:Name="InfoPoster"
            Source="{Binding Path=SelectedShow.Images.Fanart}" Aspect="AspectFill" />

@@ -40,15 +40,15 @@ namespace InfoSeries.ViewModels
             TopSeries = new ObservableCollection<SerieFollowersVM>(result);
         }
 
-        private Command<ItemTappedEventArgs> _goToDetailPage;
+        private DelegateCommand<ItemTappedEventArgs> _goToDetailPage;
 
-        public Command<ItemTappedEventArgs> GoToDetailPage
+        public DelegateCommand<ItemTappedEventArgs> GoToDetailPage
         {
             get
             {
                 if (_goToDetailPage == null)
                 {
-                    _goToDetailPage = new Command<ItemTappedEventArgs>(async selected =>
+                    _goToDetailPage = new DelegateCommand<ItemTappedEventArgs>(async selected =>
                     {
                         NavigationParameters param = new NavigationParameters();
                         param.Add("show", selected.Item);
