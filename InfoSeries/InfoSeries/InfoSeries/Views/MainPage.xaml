@@ -12,7 +12,7 @@
       <DataTemplate x:Key="TopSeriesTemplate">
         <ViewCell>
           <ViewCell.View>
-            <Grid>
+            <Grid Margin="12">
               <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="2*" />
