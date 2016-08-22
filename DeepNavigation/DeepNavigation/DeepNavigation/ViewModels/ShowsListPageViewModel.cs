@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using InfoSeries.Core.Models;
 using InfoSeries.Core.Services;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Xamarin.Forms;
@@ -38,15 +39,15 @@ namespace DeepNavigation.ViewModels
         }
 
 
-        private Command<ItemTappedEventArgs> _goToDetailPage;
+        private DelegateCommand<ItemTappedEventArgs> _goToDetailPage;
 
-        public Command<ItemTappedEventArgs> GoToDetailPage
+        public DelegateCommand<ItemTappedEventArgs> GoToDetailPage
         {
             get
             {
                 if (_goToDetailPage == null)
                 {
-                    _goToDetailPage = new Command<ItemTappedEventArgs>(async selected =>
+                    _goToDetailPage = new DelegateCommand<ItemTappedEventArgs>(async selected =>
                     {
                         NavigationParameters param = new NavigationParameters();
                         var serie = selected.Item as SerieFollowersVM;
