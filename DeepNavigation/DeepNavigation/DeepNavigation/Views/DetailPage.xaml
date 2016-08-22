@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             Title="{Binding Title}"
+             Title="{Binding Path=SelectedShow.Name}"
              x:Class="DeepNavigation.Views.DetailPage">
 
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
+  <StackLayout>
+    <Image x:Name="InfoPoster"
+           Source="{Binding Path=SelectedShow.Images.Fanart}" Aspect="AspectFill" />
+    <Label Text="{Binding Path=SelectedShow.Overview}" LineBreakMode="WordWrap" FontSize="13" TextColor="Black" Margin="15" />
   </StackLayout>
 
 </ContentPage>

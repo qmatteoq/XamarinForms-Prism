@@ -2,12 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:behaviors="clr-namespace:Corcav.Behaviors;assembly=Corcav.Behaviors"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="DeepNavigation.Views.ShowsListPage"
              Title="Shows list">
 
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
-  </StackLayout>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="HighlightSeriesTemplate">
+        <ViewCell>
+          <ViewCell.View>
+            <Image Source="{Binding Images.Poster}" Grid.Column="0" x:Name="TopImage" />
+          </ViewCell.View>
+        </ViewCell>
+
+
+      </DataTemplate>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ListView ItemTemplate="{StaticResource HighlightSeriesTemplate}"
+            ItemsSource="{Binding Path=HighlightSeries}" RowHeight="200">
+    <behaviors:Interaction.Behaviors>
+      <behaviors:BehaviorCollection>
+        <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding GoToDetailPage}" />
+      </behaviors:BehaviorCollection>
+    </behaviors:Interaction.Behaviors>
+  </ListView>
 
 </ContentPage>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepNavigation.Droid", "Dee
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepNavigation.UWP", "DeepNavigation\DeepNavigation.UWP\DeepNavigation.UWP.csproj", "{49EB3DA8-5B66-4E89-A5DB-5110100A738F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfoSeries.Core", "InfoSeries.Core\InfoSeries.Core.csproj", "{68906DF0-CED1-471A-A585-DBA675AB4E2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,22 @@ Global
 		{49EB3DA8-5B66-4E89-A5DB-5110100A738F}.Release|x86.ActiveCfg = Release|x86
 		{49EB3DA8-5B66-4E89-A5DB-5110100A738F}.Release|x86.Build.0 = Release|x86
 		{49EB3DA8-5B66-4E89-A5DB-5110100A738F}.Release|x86.Deploy.0 = Release|x86
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Debug|ARM.Build.0 = Debug|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Debug|x64.Build.0 = Debug|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Debug|x86.Build.0 = Debug|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Release|ARM.ActiveCfg = Release|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Release|ARM.Build.0 = Release|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Release|x64.ActiveCfg = Release|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Release|x64.Build.0 = Release|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Release|x86.ActiveCfg = Release|Any CPU
+		{68906DF0-CED1-471A-A585-DBA675AB4E2B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,20 +1,29 @@
-﻿using Prism.Mvvm;
+﻿using System.Collections.ObjectModel;
+using InfoSeries.Core.Models;
+using InfoSeries.Core.Services;
+using Prism.Mvvm;
 using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace DeepNavigation.ViewModels
 {
     public class ShowsListPageViewModel : BindableBase, INavigationAware
     {
-        private string _title;
-        public string Title
+        private readonly ITsApiService _tsApiService;
+        private readonly INavigationService _navigationService;
+        private ObservableCollection<SerieFollowersVM> _highlightSeries;
+
+        public ObservableCollection<SerieFollowersVM> HighlightSeries
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get { return _highlightSeries; }
+            set { SetProperty(ref _highlightSeries, value); }
         }
 
-        public ShowsListPageViewModel()
+
+        public ShowsListPageViewModel(ITsApiService tsApiService, INavigationService navigationService)
         {
-           
+            _tsApiService = tsApiService;
+            _navigationService = navigationService;
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -22,9 +31,32 @@ namespace DeepNavigation.ViewModels
 
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+        public async void OnNavigatedTo(NavigationParameters parameters)
         {
-            Title = "List of shows";
+            var series = await _tsApiService.GetStatsTopSeries();
+            HighlightSeries = new ObservableCollection<SerieFollowersVM>(series);
+        }
+
+
+        private Command<ItemTappedEventArgs> _goToDetailPage;
+
+        public Command<ItemTappedEventArgs> GoToDetailPage
+        {
+            get
+            {
+                if (_goToDetailPage == null)
+                {
+                    _goToDetailPage = new Command<ItemTappedEventArgs>(async selected =>
+                    {
+                        NavigationParameters param = new NavigationParameters();
+                        var serie = selected.Item as SerieFollowersVM;
+                        param.Add("show", serie.Id);
+                        await _navigationService.NavigateAsync("DetailPage", param);
+                    });
+                }
+
+                return _goToDetailPage;
+            }
         }
     }
 }
