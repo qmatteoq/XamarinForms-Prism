@@ -2,7 +2,7 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
-            xmlns:views="clr-namespace:PrismTest.Views;assembly=PrismTest"
+            xmlns:views="clr-namespace:DeepNavigation.Views;assembly=DeepNavigation"
             prism:ViewModelLocator.AutowireViewModel="True"
             Title="Main page"
             x:Class="DeepNavigation.Views.MainTabbedPage">
