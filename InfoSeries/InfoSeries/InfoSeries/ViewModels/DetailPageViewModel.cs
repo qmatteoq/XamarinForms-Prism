@@ -47,7 +47,7 @@ namespace InfoSeries.ViewModels
                     _shareItemCommand = new DelegateCommand(async () =>
                     {
                         string image = SelectedShow.Images.Poster;
-                        await _shareService.ShareShirt(SelectedShow.Name, image);
+                        await _shareService.SharePoster(SelectedShow.Name, image);
                     });
                 }
 

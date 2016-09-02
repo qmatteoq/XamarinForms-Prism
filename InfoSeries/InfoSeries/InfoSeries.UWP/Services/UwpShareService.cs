@@ -18,7 +18,7 @@ namespace InfoSeries.UWP.Services
         private string _title;
         private string _image;
 
-        public async Task ShareShirt(string title, string image)
+        public async Task SharePoster(string title, string image)
         {
             _title = title;
             _image = image;

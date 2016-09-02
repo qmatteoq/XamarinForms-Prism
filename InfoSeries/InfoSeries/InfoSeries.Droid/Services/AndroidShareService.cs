@@ -14,7 +14,7 @@ namespace InfoSeries.Droid.Services
 {
     public class AndroidShareService : IShareService
     {
-        public async Task ShareShirt(string title, string image)
+        public async Task SharePoster(string title, string image)
         {
             var intent = new Intent(Intent.ActionSend);
             intent.SetType("image/png");

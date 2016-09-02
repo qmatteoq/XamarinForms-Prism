@@ -4,6 +4,6 @@ namespace InfoSeries.Services
 {
     public interface IShareService
     {
-        Task ShareShirt(string title, string image);
+        Task SharePoster(string title, string image);
     }
 }
