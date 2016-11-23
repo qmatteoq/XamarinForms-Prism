@@ -35,7 +35,7 @@ namespace DeepNavigation.ViewModels
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
-            
+
         }
     }
 }
