@@ -1,37 +1,19 @@
-﻿using System.Collections.ObjectModel;
-using InfoSeries.Core.Models;
-using InfoSeries.Core.Services;
-using Prism.Mvvm;
-using Prism.Navigation;
+﻿using Prism.Mvvm;
 
 namespace DeepNavigation.ViewModels
 {
-    public class UpcomingShowsPageViewModel : BindableBase, INavigationAware
+    public class UpcomingShowsPageViewModel : BindableBase
     {
-        private readonly ITsApiService _tsApiService;
-
-        private ObservableCollection<SerieFollowersVM> _topSeries;
-
-        public ObservableCollection<SerieFollowersVM> TopSeries
+        private string _description;
+        public string Description
         {
-            get { return _topSeries; }
-            set { SetProperty(ref _topSeries, value); }
+            get { return _description; }
+            set { SetProperty(ref _description, value); }
         }
 
-        public UpcomingShowsPageViewModel(ITsApiService tsApiService)
+        public UpcomingShowsPageViewModel()
         {
-            _tsApiService = tsApiService;
-        }
-
-        public void OnNavigatedFrom(NavigationParameters parameters)
-        {
-
-        }
-
-        public async void OnNavigatedTo(NavigationParameters parameters)
-        {
-            var series = await _tsApiService.GetStatsTopSeries();
-            TopSeries = new ObservableCollection<SerieFollowersVM>(series);
+            Description = "This is the list of upcoming shows";
         }
     }
 }

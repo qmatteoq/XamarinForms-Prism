@@ -29,8 +29,13 @@ namespace DeepNavigation.ViewModels
 
         public async void OnNavigatedTo(NavigationParameters parameters)
         {
-            int id = Convert.ToInt32(parameters["id"]);
+            int id = Convert.ToInt32(parameters["show"]);
             SelectedShow = await _tsApiService.GetSerieById(id);
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            
         }
     }
 }

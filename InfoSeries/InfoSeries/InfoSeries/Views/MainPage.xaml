@@ -8,6 +8,7 @@
              Title="Info Series">
 
   <ContentPage.Resources>
+      
     <ResourceDictionary>
       <DataTemplate x:Key="TopSeriesTemplate">
         <ViewCell>
@@ -41,17 +42,16 @@
             </Grid>
           </ViewCell.View>
         </ViewCell>
-
-
       </DataTemplate>
     </ResourceDictionary>
+      
   </ContentPage.Resources>
 
   <ListView ItemTemplate="{StaticResource TopSeriesTemplate}"
             ItemsSource="{Binding Path=TopSeries}" RowHeight="200">
     <behaviors:Interaction.Behaviors>
       <behaviors:BehaviorCollection>
-        <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding GoToDetailPage}" />
+        <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding GoToDetailPage}" PassEventArgument="True" />
       </behaviors:BehaviorCollection>
     </behaviors:Interaction.Behaviors>
   </ListView>

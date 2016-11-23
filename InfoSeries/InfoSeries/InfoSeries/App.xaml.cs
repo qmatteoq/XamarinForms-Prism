@@ -3,6 +3,8 @@ using Prism.Unity;
 using InfoSeries.Views;
 using Microsoft.Practices.Unity;
 using Xamarin.Forms;
+using InfoSeries.ViewModels;
+using InfoSeries.Services;
 
 namespace InfoSeries
 {
@@ -16,12 +18,11 @@ namespace InfoSeries
 
             NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
-
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<DetailPage>();
+            Container.RegisterTypeForNavigation<DetailPage, MyCustomDetailViewModel>();
             Container.RegisterType<ITsApiService, TsApiService>();
         }
     }

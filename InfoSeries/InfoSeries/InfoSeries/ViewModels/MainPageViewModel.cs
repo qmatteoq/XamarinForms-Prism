@@ -1,10 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using InfoSeries.Core.Models;
 using InfoSeries.Core.Services;
 using Xamarin.Forms;
@@ -15,6 +12,7 @@ namespace InfoSeries.ViewModels
     {
         private readonly ITsApiService _apiService;
         private readonly INavigationService _navigationService;
+
         private ObservableCollection<SerieFollowersVM> _topSeries;
 
         public ObservableCollection<SerieFollowersVM> TopSeries
@@ -36,8 +34,16 @@ namespace InfoSeries.ViewModels
 
         public async void OnNavigatedTo(NavigationParameters parameters)
         {
-            var result = await _apiService.GetStatsTopSeries();
-            TopSeries = new ObservableCollection<SerieFollowersVM>(result);
+            if (TopSeries == null || TopSeries.Count == 0)
+            {
+                var result = await _apiService.GetStatsTopSeries();
+                TopSeries = new ObservableCollection<SerieFollowersVM>(result);
+            }
+        }
+
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+
         }
 
         private DelegateCommand<ItemTappedEventArgs> _goToDetailPage;

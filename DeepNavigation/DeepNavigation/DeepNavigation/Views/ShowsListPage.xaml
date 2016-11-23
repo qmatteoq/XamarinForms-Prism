@@ -7,27 +7,53 @@
              x:Class="DeepNavigation.Views.ShowsListPage"
              Title="Shows list">
 
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <DataTemplate x:Key="HighlightSeriesTemplate">
-        <ViewCell>
-          <ViewCell.View>
-            <Image Source="{Binding Images.Poster}" Grid.Column="0" x:Name="TopImage" Margin="0, 0, 0, 12" />
-          </ViewCell.View>
-        </ViewCell>
+    <ContentPage.Resources>
 
+        <ResourceDictionary>
+            <DataTemplate x:Key="TopSeriesTemplate">
+                <ViewCell>
+                    <ViewCell.View>
+                        <Grid Margin="12">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="2*" />
+                            </Grid.ColumnDefinitions>
 
-      </DataTemplate>
-    </ResourceDictionary>
-  </ContentPage.Resources>
+                            <Image Source="{Binding Images.Poster}" Grid.Column="0" x:Name="TopImage" />
+                            <StackLayout Grid.Column="1" Margin="12, 0, 0, 0" VerticalOptions="Start">
+                                <Label Text="{Binding Name}" FontSize="18" TextColor="#58666e" FontAttributes="Bold" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Runtime: " FontSize="14" TextColor="#58666e" />
+                                    <Label Text="{Binding Runtime}" FontSize="14" TextColor="#98a6ad" Margin="5, 0, 0, 0" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Air day: " FontSize="14" TextColor="#58666e" />
+                                    <Label Text="{Binding AirDay}" FontSize="14" TextColor="#98a6ad" Margin="5, 0, 0, 0" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Country: " FontSize="14" TextColor="#58666e" />
+                                    <Label Text="{Binding Country}" FontSize="14" TextColor="#98a6ad" Margin="5, 0, 0, 0" />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Network: " FontSize="14" TextColor="#58666e" />
+                                    <Label Text="{Binding Network}" FontSize="14" TextColor="#98a6ad" Margin="5, 0, 0, 0" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ResourceDictionary>
 
-  <ListView ItemTemplate="{StaticResource HighlightSeriesTemplate}"
+    </ContentPage.Resources>
+
+    <ListView ItemTemplate="{StaticResource TopSeriesTemplate}"
             ItemsSource="{Binding Path=HighlightSeries}" RowHeight="200">
-    <behaviors:Interaction.Behaviors>
-      <behaviors:BehaviorCollection>
-        <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding GoToDetailPage}" />
-      </behaviors:BehaviorCollection>
-    </behaviors:Interaction.Behaviors>
-  </ListView>
+        <behaviors:Interaction.Behaviors>
+            <behaviors:BehaviorCollection>
+                <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding GoToDetailPage}" PassEventArgument="True" />
+            </behaviors:BehaviorCollection>
+        </behaviors:Interaction.Behaviors>
+    </ListView>
 
 </ContentPage>

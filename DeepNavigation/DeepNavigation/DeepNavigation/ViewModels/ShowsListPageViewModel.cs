@@ -38,6 +38,10 @@ namespace DeepNavigation.ViewModels
             HighlightSeries = new ObservableCollection<SerieFollowersVM>(series);
         }
 
+        public void OnNavigatingTo(NavigationParameters parameters)
+        {
+            
+        }
 
         private DelegateCommand<ItemTappedEventArgs> _goToDetailPage;
 
