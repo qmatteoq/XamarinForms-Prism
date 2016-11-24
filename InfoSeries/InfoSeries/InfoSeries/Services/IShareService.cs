@@ -1,9 +1,7 @@
-﻿using System.Threading.Tasks;
-
-namespace InfoSeries.Services
+﻿namespace InfoSeries.Services
 {
     public interface IShareService
     {
-        Task SharePoster(string title, string image);
+         void Share(string title, string overview);
     }
 }

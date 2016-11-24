@@ -4,7 +4,6 @@ using InfoSeries.Views;
 using Microsoft.Practices.Unity;
 using Xamarin.Forms;
 using InfoSeries.ViewModels;
-using InfoSeries.Services;
 
 namespace InfoSeries
 {

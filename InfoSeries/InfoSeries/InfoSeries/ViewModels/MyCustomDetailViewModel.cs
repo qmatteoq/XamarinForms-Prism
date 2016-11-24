@@ -34,26 +34,25 @@ namespace InfoSeries.ViewModels
 
         public void OnNavigatingTo(NavigationParameters parameters)
         {
-            
+
         }
 
-private DelegateCommand _shareItemCommand;
+        private DelegateCommand _shareItemCommand;
 
-public DelegateCommand ShareItemCommand
-{
-    get
-    {
-        if (_shareItemCommand == null)
+        public DelegateCommand ShareItemCommand
         {
-            _shareItemCommand = new DelegateCommand(async () =>
+            get
             {
-                string image = SelectedShow.Images.Poster;
-                await _shareService.SharePoster(SelectedShow.Name, image);
-            });
-        }
+                if (_shareItemCommand == null)
+                {
+                    _shareItemCommand = new DelegateCommand(() =>
+                    {
+                        _shareService.Share(SelectedShow.Name, SelectedShow.Overview);
+                    });
+                }
 
-        return _shareItemCommand;
-    }
-}
+                return _shareItemCommand;
+            }
+        }
     }
 }

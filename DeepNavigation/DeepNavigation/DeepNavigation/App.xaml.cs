@@ -14,8 +14,8 @@ namespace DeepNavigation
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("MainTabbedPage/NavigationPage/ShowsListPage/DetailPage?show=279121");
-            //await NavigationService.NavigateAsync("MainTabbedPage");
+            //await NavigationService.NavigateAsync("MainTabbedPage/NavigationPage/ShowsListPage/DetailPage?show=279121");
+            await NavigationService.NavigateAsync("MainTabbedPage/NavigationPage/ShowsListPage");
         }
 
         protected override void RegisterTypes()
