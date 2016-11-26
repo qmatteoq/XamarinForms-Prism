@@ -34,7 +34,7 @@ namespace InfoSeries.UWP.Services
             var deferral = args.Request.GetDeferral();
             args.Request.Data.Properties.Title = _title;
             args.Request.Data.Properties.Description = _title;
-            args.Request.Data.SetWebLink(new Uri(_url));
+            args.Request.Data.SetText(_url);
             deferral.Complete();
         }
     }
