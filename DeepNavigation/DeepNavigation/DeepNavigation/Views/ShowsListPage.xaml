@@ -8,7 +8,6 @@
              Title="Shows list">
 
     <ContentPage.Resources>
-
         <ResourceDictionary>
             <DataTemplate x:Key="TopSeriesTemplate">
                 <ViewCell>
@@ -44,7 +43,6 @@
                 </ViewCell>
             </DataTemplate>
         </ResourceDictionary>
-
     </ContentPage.Resources>
 
     <ListView ItemTemplate="{StaticResource TopSeriesTemplate}"

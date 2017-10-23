@@ -7,7 +7,9 @@
             Title="Main page"
             x:Class="TabbedSample.Views.MainTabbedPage">
 
-    <views:UpcomingShowsPage />
-    <views:ShowsListPage />
-    
+    <TabbedPage.Children>
+        <views:UpcomingShowsPage />
+        <views:ShowsListPage />
+    </TabbedPage.Children>
+
 </TabbedPage>

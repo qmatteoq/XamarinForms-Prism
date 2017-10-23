@@ -7,8 +7,8 @@
             Title="Main page"
             x:Class="DeepNavigation.Views.MainTabbedPage">
 
-    <views:UpcomingShowsPage />
-    <NavigationPage Title="Shows list">
+    <TabbedPage.Children>
+        <views:UpcomingShowsPage />
         <views:ShowsListPage />
-    </NavigationPage>
+    </TabbedPage.Children>
 </TabbedPage>

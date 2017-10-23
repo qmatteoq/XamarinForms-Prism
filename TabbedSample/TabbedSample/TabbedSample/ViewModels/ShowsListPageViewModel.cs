@@ -2,7 +2,6 @@
 using InfoSeries.Core.Models;
 using InfoSeries.Core.Services;
 using Prism.Mvvm;
-using Prism.Navigation;
 using Prism;
 using System;
 

@@ -48,12 +48,6 @@
     </ContentPage.Resources>
 
     <ListView ItemTemplate="{StaticResource TopSeriesTemplate}"
-            ItemsSource="{Binding Path=HighlightSeries}" RowHeight="200">
-        <behaviors:Interaction.Behaviors>
-            <behaviors:BehaviorCollection>
-                <behaviors:EventToCommand EventName="ItemTapped" Command="{Binding GoToDetailPage}" PassEventArgument="True" />
-            </behaviors:BehaviorCollection>
-        </behaviors:Interaction.Behaviors>
-    </ListView>
+            ItemsSource="{Binding Path=HighlightSeries}" RowHeight="200" />
 
 </ContentPage>
